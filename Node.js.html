@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="node.js">Node.js</h1>
+<p>Node.js foi criado por Ryan Dahl e lançado como um ambiente de execução de JavaScript do lado servidor. Com isso, a execução de códigos JavaScript não ficava mais limitada aos navegadores.</p>
+<p>O Node.js foi adotado por grandes empresas como Microsoft, Yahoo! e LinkedIn, aumentando ainda mais sua popularidade. A formação da Fundação Node.js como uma organização sem fins lucrativos para gerenciar e evoluir o projeto. Mais tarde conhecida como OpenJS Foundation.</p>
+<p>Em 2013 houve o lançamento da versão 0.10 do Node.js, trazendo melhorias de desempenho e estabilidade. A versão 0.12 lançada em 2015, introduziu o suporte oficial para o ECMAScript 6 (ES6), trazendo recursos modernos ao JavaScript. O lançamento da versão 6 do Node.js, marcando a transição para um ciclo de lançamento de versões Long Term Support (LTS).</p>
+<p>Ryan Dahl cria o Deno, o maior concorrente do Node.js, dessa vez fazendo tudo do jeito como ele queria.</p>
+<h2 id="como-o-node.js-funciona">Como o Node.js funciona</h2>
+<h3 id="o-que-o-node.js-não-é">O que o Node.js não é</h3>
+<ol>
+<li>
+<p>Node.js não é uma linguagem de programação, a linguagem é JavaScript.</p>
+</li>
+<li>
+<p>Não é um framework, é um runtime (ambiente de execução) de JavaScript.</p>
+</li>
+<li>
+<p>Node não é limitado, ele faz tudo que outras tecnologias de backend fazem.</p>
+</li>
+</ol>
+<h3 id="como-funciona">Como funciona?</h3>
+<p>Navegadores possuem dois motores, o Rendering Engine e JavaScript Engine. O primeiro, responsável pela renderização do HTML e CSS, o segundo para gerar a interatividade das páginas. Com o crescimento do JavaScript, cada navegador criou seu próprio JavaScript Engine.</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Navegador</th>
+<th align="center">Rendering Engine</th>
+<th align="center">JavaScript Engine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Internet Explorer</td>
+<td align="center">Trident</td>
+<td align="center">Chakra</td>
+</tr>
+<tr>
+<td align="center">Firefox</td>
+<td align="center">Gecko</td>
+<td align="center">SpiderMonkey</td>
+</tr>
+<tr>
+<td align="center">Google Chrome</td>
+<td align="center">Webkit</td>
+<td align="center">V8</td>
+</tr>
+<tr>
+<td align="center">Safari</td>
+<td align="center">Webkit</td>
+<td align="center">JavascriptCore</td>
+</tr>
+</tbody>
+</table><p>Ryan Dahl utilizou do JavaScript Engine V8, do Google Chrome para criar o Node.js, para isso ele utilizou uma camada extra, com libuv, para criar um event loop e conversar com o sistemas operacional.</p>
+<h2 id="projeto-node.js">Projeto Node.js</h2>
+<h3 id="iniciar-projeto">Iniciar projeto</h3>
+<p>Por padrão em muitos projetos, os arquivos <code>.js</code> são colocados em um diretório chamado <code>src</code>, que geralmente contém o arquivo de ponto de entrada e outros arquivos do projeto. Para iniciar o seu projeto você pode usar o Node Package Manager, conhecido como npm, utilize o comando <code>npm init</code>. O npm vai fazer uma série de perguntas, e ao final será criado um package.json parecido com:</p>
+<pre><code>{
+	"name":  "client",
+	"version":  "1.0.0",
+	"main":  "index.js",
+	"scripts":  {
+	"test":  "echo \"Error: no test specified\" &amp;&amp; exit 1"
+},
+	"author":  "Élcio Mateus Fernandes",
+	"license":  "ISC",
+	"description":  ""
+}
+</code></pre>
+<p>Você também pode utilizar o comando <code>npm init -y</code> para criar um projeto de maneira mais rápida, o argumento <code>-y</code>indica que você está dando sim para todas as perguntas do questionário.</p>
+<p>Por padrão, os arquivos .js são colocados dentro de um diretório chamado src, nesse diretório geralmente ficam o arquivo de ponto de entrada e arquivos de configuração.</p>
+<h3 id="executar-projeto">Executar projeto</h3>
+<p>Para executar um arquivo .js, deve ser utilizado o comando <code>node</code> seguido do nome do arquivo, <code>node index.js</code>. Caso esteja dentro de um diretório o comando deve conter o caminho até o arquivo, considerando o diretório atual do terminal, ou seja, se você estiver no diretório raiz <code>~/Documentos/www/Node.js</code> e seu arquivo de entrada estiver em <code>~/Documentos/www/Node.js/src/index.js</code> você precisa utilizar comando <code>node src/index.js</code>. O Node.js oferece uma funcionalidade chamada <code>--watch</code>, disponível nas versões mais recentes, que reexecuta automaticamente o arquivo sempre que é feita uma alteração. O comando seria: <code>node --watch src/index.js</code>."</p>
+<h3 id="scripts">Scripts</h3>
+<p>O arquivo package.json possui um dicionário chamado <code>scripts</code>, dentro dele podemos colocar atalhos,  que quando executados no terminal vão executar o que está descrito no package.json. Se colocarmos algo como:</p>
+<pre><code>"dev": "node src/index.js" ,
+</code></pre>
+<p>Ao rodar o comandos <code>npm run dev</code> no diretório do projeto, estaremos na realidade rodando o comandos <code>node src/index.js</code>.</p>
+</div>
+</body>
+
+</html>
