@@ -85,7 +85,44 @@
 <pre><code>"dev": "node src/index.js" ,
 </code></pre>
 <p>Ao rodar o comandos <code>npm run dev</code> no diretório do projeto, estaremos na realidade rodando o comandos <code>node src/index.js</code>.</p>
-</div>
+<h2 id="node-modules">Node Modules</h2>
+<p>Conforme a complexidade do código aumenta, fica difícil de se fazer manutenção e realizar mudanças, uma das boas práticas é fazer a modularizarão do seu código, um código, dividido em pequenos arquivos.</p>
+<h3 id="commonjs">CommonJS</h3>
+<p>O CommonJS vem por padrão e utiliza um sintaxe mais simples com as palavras <code>require</code> para carregar módulos e <code>module.exports</code> para exportar funcionalidades.</p>
+<pre><code>const elem = require('module');
+
+module.exports = {};
+</code></pre>
+<h3 id="esm">ESM</h3>
+<p>Os módulos ESM introduzem uma sintaxe unificada com as palavras-chave <code>import</code> e <code>export</code> alinha com padrões de outras linguagens modernas.</p>
+<pre><code>import { elem } from './modules.js';
+
+export const elem = {};
+</code></pre>
+<h3 id="cjs-x-esm">CJS x ESM</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">CommonJS</th>
+<th align="center">ESM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Síncrono por padrão</td>
+<td align="center">Assíncrono por padrão</td>
+</tr>
+<tr>
+<td align="center">Uso principal em servidor (Node.js)</td>
+<td align="center">Suportado nativamente em navegadores</td>
+</tr>
+<tr>
+<td align="center">Carregamento dinâmico</td>
+<td align="center">Carregamento estático</td>
+</tr>
+</tbody>
+</table></div>
 </body>
 
 </html>

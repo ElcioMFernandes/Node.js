@@ -19,7 +19,6 @@ Ryan Dahl cria o Deno, o maior concorrente do Node.js, dessa vez fazendo tudo do
  3. Node não é limitado, ele faz tudo que outras tecnologias de backend fazem.
 
 ### Como funciona?
-
 Navegadores possuem dois motores, o Rendering Engine e JavaScript Engine. O primeiro, responsável pela renderização do HTML e CSS, o segundo para gerar a interatividade das páginas. Com o crescimento do JavaScript, cada navegador criou seu próprio JavaScript Engine.
 |Navegador | Rendering Engine | JavaScript Engine|
 |:-:|:-:|:-:|
@@ -33,6 +32,7 @@ Ryan Dahl utilizou do JavaScript Engine V8, do Google Chrome para criar o Node.j
 ## Projeto Node.js
 
 ### Iniciar projeto
+
 Por padrão em muitos projetos, os arquivos `.js` são colocados em um diretório chamado `src`, que geralmente contém o arquivo de ponto de entrada e outros arquivos do projeto. Para iniciar o seu projeto você pode usar o Node Package Manager, conhecido como npm, utilize o comando `npm init`. O npm vai fazer uma série de perguntas, e ao final será criado um package.json parecido com:
 
 ```
@@ -65,3 +65,34 @@ O arquivo package.json possui um dicionário chamado `scripts`, dentro dele pode
 ```
 
 Ao rodar o comandos `npm run dev` no diretório do projeto, estaremos na realidade rodando o comandos `node src/index.js`.
+
+## Node Modules
+
+Conforme a complexidade do código aumenta, fica difícil de se fazer manutenção e realizar mudanças, uma das boas práticas é fazer a modularizarão do seu código, um código, dividido em pequenos arquivos.
+
+### CommonJS
+
+O CommonJS vem por padrão e utiliza um sintaxe mais simples com as palavras `require` para carregar módulos e `module.exports` para exportar funcionalidades.
+```
+const elem = require('module');
+
+module.exports = {};
+```
+
+### ESM
+Os módulos ESM introduzem uma sintaxe unificada com as palavras-chave `import` e `export` alinha com padrões de outras linguagens modernas.
+```
+import { elem } from './modules.js';
+
+export const elem = {};
+```
+
+### CJS x ESM
+
+| CommonJS | ESM |
+|:-:|:-:|
+|Síncrono por padrão|Assíncrono por padrão|
+|Uso principal em servidor (Node.js)|Suportado nativamente em navegadores|
+|Carregamento dinâmico|Carregamento estático|
+
+
